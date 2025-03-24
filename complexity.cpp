@@ -3,25 +3,20 @@ using namespace std;
 
 int main() {
     char tryAgain;
-
     do {
         system("cls"); // Clear screen (Windows specific)
-
         // Simple header
         cout << "===================================\n";
         cout << "    PASSWORD STRENGTH CHECKER\n";
         cout << "===================================\n\n";
-
         string password;
         cout << "Enter your password: ";
         cin >> password;
-
         // Count different character types
         int upperCount = 0;
         int lowerCount = 0;
         int digitCount = 0;
         int symbolCount = 0;
-
         for (char c : password) {
             if (isupper(c)) {
                 upperCount++;
@@ -36,7 +31,6 @@ int main() {
 
         // Calculate password score
         int score = 0;
-
         // Base score for length
         if (password.length() >= 8) {
             score += 30;
@@ -97,6 +91,5 @@ int main() {
         cin >> tryAgain;
 
     } while (tryAgain == 'y' || tryAgain == 'Y');
-
     return 0;
 }
